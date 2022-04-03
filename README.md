@@ -1,0 +1,2 @@
+# qe2boltz
+It is modified program qe2boltz, originally written by Georgy Samsonidze, An Li, Daehyun Wee, Bosch Research (source:  https://blog.levilentz.com/boltztrap-tutorial-for-quantum-espresso/). The modification allows to read data from xml file instead of output file. It is useful if you have already done some calculations and did not use verbosity=high flag, which is required by original version of qe2boltz and now is not required.
