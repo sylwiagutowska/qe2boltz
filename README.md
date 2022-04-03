@@ -6,3 +6,8 @@ It allows to convert results obtained from Quantum Espresso (QE) to format requi
 Original qe2boltz script reads data from output file and requirs verbosity='high' tag in input file.
 
 My modification allows to read data from  prefix.xml file saved automatically by QE in output_dir instead of output file, so the verbosity='high' tag is not required. It is useful if you have already done some calculations and did not use this verbosity flag.
+
+Usage: python qe2boltz.py pw_input_file nbnd_excluded
+where:
+1) pw_input_file is input file used in calculations, eg. nscf.in or dos.in
+2) nbnd_excluded - the bands of index < nbnd_excluded will be omitted in calculations (I usually use 0 for safety reasons :) )
