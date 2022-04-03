@@ -20,7 +20,8 @@ def search_tag(tmp,tag):
      break
    if not excluded: 
     m2=m.split('=')
-    outp=m2[-1].replace("'","")
+    outp=m2[-1].replace("'","").replace('"','').replace('\n','')
+ print(outp)
  return outp
 
 def read_input(pw_input):
@@ -29,7 +30,9 @@ def read_input(pw_input):
  tmp=h.readlines()
  h.close()
  prefix=search_tag(tmp,'prefix')
+ if len(prefix)==0: prefix='pwscf' #default qe value
  tmp_dir=search_tag(tmp,'outdir')
+ if len(tmp_dir)==0: tmp_dir='./' #default qe value
  return prefix,tmp_dir 
 
 def read_data(prefix,tmp_dir):
